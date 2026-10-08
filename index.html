@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unique Mart | Online Shop</title>
+  <meta name="description" content="Unique Mart - Shop useful products online.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">UNIQUE <span>MART</span></div>
+  <button class="cart-btn" onclick="toggleCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">WELCOME TO</p>
+    <h1>Unique Mart</h1>
+    <p>Useful products. Great value. Easy ordering.</p>
+    <a class="primary" href="#products">Shop Now</a>
+  </div>
+</section>
+
+<section class="tools">
+  <input id="search" type="search" placeholder="Search products..." oninput="renderProducts()">
+  <select id="category" onchange="renderProducts()">
+    <option value="all">All Categories</option>
+    <option value="electronics">Electronics</option>
+    <option value="home">Home</option>
+    <option value="fashion">Fashion</option>
+    <option value="other">Other</option>
+  </select>
+</section>
+
+<main id="products" class="products"></main>
+
+<section class="instagram">
+  <h2>Follow Unique Mart</h2>
+  <p>See new products and offers on Instagram.</p>
+  <a class="primary" href="https://instagram.com/unique_mart_14" target="_blank" rel="noopener">@unique_mart_14</a>
+</section>
+
+<div id="cartPanel" class="cart-panel">
+  <div class="cart-head"><h2>Your Cart</h2><button onclick="toggleCart()">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total">Total: ₹<span id="cartTotal">0</span></div>
+  <button class="primary full" onclick="orderOnInstagram()">Order via Instagram</button>
+  <button class="clear" onclick="clearCart()">Clear Cart</button>
+</div>
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+<footer>© <span id="year"></span> Unique Mart · Instagram: @unique_mart_14</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
